@@ -1,0 +1,56 @@
+name: rl_course
+channels:
+  - pytorch        # For PyTorch and related packages
+  - nvidia         # For CUDA support
+  - conda-forge    # Community-driven collection of conda packages
+  - defaults       # Default conda channel from Anaconda
+
+dependencies:
+  # Core Python and Deep Learning
+  - python=3.11    # Base Python programming language
+  - pytorch        # Deep learning framework with strong GPU acceleration
+  - torchvision    # Computer vision library that works with PyTorch
+  - torchaudio     # Audio processing library that works with PyTorch
+  - pytorch-cuda   # CUDA support for PyTorch GPU acceleration
+  
+  # Optimization Tools
+  - pulp           # Linear programming solver with simple syntax
+  - cvxpy          # Convex optimization library for modeling optimization problems
+  
+  # Additional Tools
+  - swig           # Interface generator, needed for some RL environments
+  
+  # Experiment Tracking
+  - wandb          # Weights & Biases for experiment tracking (conda version)
+  
+  # Package Management
+  - pip            # Python package installer
+  
+  # Pip-installed Packages
+  - pip:
+      # Reinforcement Learning
+      - gymnasium==0.29
+      - "gymnasium[atari]"               # Atari environments
+      - "gymnasium[accept-rom-license]"  # License acceptance for ROMs
+      - "gymnasium[mujoco]"              # MuJoCo environments
+      - "gymnasium[box2d]"               # Box2D environments like LunarLander
+      - gymnasium[other]
+      - ale-py                           # Explicitly install ALE
+      - mujoco
+      - stable-baselines3[extra]         # Implementation of RL algorithms with extras
+      
+      # Hugging Face Integration
+      - huggingface_hub                  # For downloading and uploading models
+      - huggingface_sb3                  # Stable-Baselines3 integration with Hugging Face
+      
+      # Data Analysis and Visualization
+      - matplotlib                   # Standard plotting library
+      - seaborn                      # Statistical data visualization
+      - pandas                       # Data manipulation & analysis library
+      - tqdm                         # Progress bar for loops and training
+      
+      # Development Tools
+      - jupyterlab                   # Web-based interactive development environment
+      
+      # Additional Tracking Tools
+      - wandb                        # Weights & Biases (pip version for latest features)

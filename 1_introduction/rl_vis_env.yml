@@ -1,0 +1,31 @@
+name: rl_vis
+channels:
+  - conda-forge    # Community-maintained packages
+  - defaults       # Default Anaconda packages
+dependencies:
+  - python=3.11                # Base Python interpreter
+  - pip                        # Python package installer
+  - swig                       # Required for building some Gymnasium environments
+  - ffmpeg                     # Video encoding/decoding support
+  - ipykernel                  # Python kernel for Jupyter notebooks
+  - jupyterlab                 # Interactive development environment for notebooks
+  - imageio                    # Image/video reading and writing
+  - imageio-ffmpeg             # ffmpeg plugin for imageio
+  - cloudpickle                # Enhanced pickle for Python objects
+  
+  - pip:
+    - gymnasium==0.29.1                 # Modern fork of OpenAI Gym
+    - "gymnasium[atari]"                # Support for Atari game environments
+    - "gymnasium[accept-rom-license]"   # Auto-accept Atari ROM license
+    - "gymnasium[mujoco]"               # Physics-based robotics environments
+    - "gymnasium[box2d]"                # 2D physics environments (like LunarLander)
+    - "gymnasium[other]"                # Additional environments 
+    - gym==0.26.2                       # Legacy OpenAI Gym (for old models)
+    - ale-py                            # Atari Learning Environment backend
+    - mujoco                     # Physics-based robotics environments
+    - numpy                      # Numerical computations
+    - matplotlib                 # Plotting and visualization
+    - stable-baselines3                 # RL algorithm implementations
+    - huggingface-sb3                   # Load pretrained SB3 models
+    - huggingface_hub                   # Interface with HuggingFace
+    - tqdm                              # Progress bar for loops
